@@ -1,0 +1,32 @@
+#boxbody {color: #444;font: normal 12px/20px "Lucida Sans Unicode","Lucida Grande",sans-serif;}
+h1 {color: #444;font: bold 16px "Lucida Sans Unicode","Lucida Grande",sans-serif;text-transform: capitalize;}
+a {color:blue;}
+.act_menu {text-align: center;}
+.act_menu a {color:#444; text-decoration: underline;margin-right: 5px;}
+.create_activity label.notes{margin-right: 43px;top: -37px;position: relative;}
+.create_activity textarea{height:75px;}
+.create_activity input[type="submit"]{ margin-left: 84px;height: 29px;width: 56px;}
+.success {text-align: center;margin-top: 100px;background-color: white;padding: 40px;border: 1px solid slategray;}
+.activity_event {background-color: #F3F2EB;padding: 10px;margin: 5px 0 5px 0;border:1px solid gray;}
+.activity_event:after {display: table; content: ""; clear: both;}
+.activity_event a {color:#444;float:right;}
+
+.mls-advanced-search h3 {padding: 0 0 10px !important;}
+#mls-wrapper .mls-advanced-search  label {font-size:14px;margin: 0 0 0 5px;}
+#sortby {height: 23px;}
+#mls-wrapper .mls-advanced-search .run-search {width:100%;}
+
+#mls-wrapper .search-reset {width:22%;}
+#mls-wrapper .mls-advanced-search .save-search-box {float:center;display: table-cell;}
+#mls-wrapper .mls-advanced-search .how-often-box {float:left;margin-left:5px;width: 160px;}
+
+#savesearchselect {height: 23px;width:55%;border:1px #434343 solid;height:35px;padding:3px 10px;font-size:14px}
+#savesearchname {height: 34px;}
+
+input[type="submit"]
+{
+background-color: #ffb800 important!;color:#FFF important!;
+text-shadow:none;height:37px;padding:8px 25px 7px;border:none;font-weight:bold !important;
+}
+
+.area-selection nolo sort-by:after {clear:none;}

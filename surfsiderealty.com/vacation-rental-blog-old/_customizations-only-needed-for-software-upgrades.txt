@@ -1,0 +1,180 @@
+
+PLEASE NOTE - THESE STEPS ARE ONLY NECESSARY IF YOU ARE USING A NEWER VERSION OF THE BLOGCFC CODE
+THAN WHAT IS ALREADY IN THE CODE LIBRARY. THE VERSION IN THE CODE LIBRARY HAS ALREADY BEEN UPDATED SO IT SHOULD NOT NEED THESE THINGS DONE.
+
+
+Steps to update the stock BlogCFC code to our SEO standards.
+
+First of all, BlogCFC does not come standard with FCK Editor as of version 5.9.5
+so we need to install that so our clients can insert images and links 
+much more easily.
+
+==============================
+
+Install FCK Editor- (if not already in the blog directory or editor not visible in the blog admin / Add Entry page)
+-------------------
+Download FCK Editor from SourceForge:
+http://sourceforge.net/projects/fckeditor/
+
+Unpack the zip file and copy the fckeditor folder over to your blog directory
+(in most cases, it is /blog/ unless you named it something else). 
+You can remove the _samples folder if you want to save some space.
+
+To get it running with BlogCFC's entry editor, open up (from your blog's root) 
+tags/textarea.cfm. Go to the bottom of the page and comment out the line surrounded 
+by an opening and a closing CFoutput tag. Then paste in the part below so it looks
+like this:
+
+<!---<cfoutput>
+<textarea name="#attributes.fieldname#" id="#attributes.fieldname#" <cfif len(attributes.class)>class="#attributes.class#"</cfif>>#attributes.value#</textarea>
+</cfoutput>
+--->
+
+<CFset basePath="/fckeditor" />
+<CFset fckEditor=CreateObject("component", basePath & "/fckeditor") />
+<CFset fckEditor.height="300px" />
+<CFset fckEditor.basePath=basePath & "/" />
+<CFset fckEditor.instanceName=attributes.fieldname />
+<CFset fckEditor.value=attributes.value />
+
+<CFoutput>
+<CFset fckEditor.Create() />
+</CFoutput>
+
+------------------------
+There's one last thing to do to the editor before we're done. 
+When BlogCFC passes the value of the entry in upon editing,
+it parses back the string to an HTML-safe format. 
+With FCKeditor, that's no longer necessary (and actually not wanted!). 
+Open up admin/entry.cfm in your client folder and look for this line (around line 450 or about 3/4 of the way down):
+
+</cfoutput><cfmodule template="../tags/textarea.cfm" fieldname="body" value="#HTMLEditFormat(form.body)#" class="txtArea"><cfoutput>
+
+Change it to this and finish the last step:
+
+</cfoutput><cfmodule template="../tags/textarea.cfm" fieldname="body" value="#form.body#" class="txtArea"><cfoutput>
+
+
+=============================================
+
+CUSTOMIZING THE BLOG CFC CODE -
+
+Now there are a few stock features that we need to disable or change
+in Blog CFC to make it easier on our servers and more search engine friendly. 
+
+1. Remove the Print feature and Send feature:
+	To remove the Print and Send features you just need to comment the links out here:
+	In the blog root, index.cfm file, about line 145-46 are the two lines to comment out for Print and Send.
+	These are the lines to comment out:
+		<cfif application.isColdFusionMX7><cfoutput><img src="#application.rooturl#/images/printer.gif" align="middle" title="#rb("print")#" height="16" width="16"> <a href="#application.rooturl#/print.cfm?id=#id#" rel="nofollow">#rb("print")#</a> | </cfoutput></cfif>
+		<cfoutput><img src="#application.rooturl#/images/email.gif" align="middle" title="#rb("send")#" height="16" width="16"> <a href="#application.rooturl#/send.cfm?id=#id#" rel="nofollow">#rb("send")#</a> | </cfoutput>
+
+2. Remove CFBloggers and Subscribe sidebar modules (or "pods" as they call them).
+	To remove the sidebar modules for CFBloggers and Subscribe, you need to sign in to the blog admin area and
+	click the Pod Manager link on the left side. 
+	Then click on Delete Pod on the lines for feed.cfm and subscribe.cfm.
+	Then click Refresh Blog Cache to update the blog pages.
+
+3. Remove the blog footer links to Riaforge and CFJedi sites.
+	Go into the tags/layout.cfm file and scroll to the bottom. Comment out the contents of the div
+	that looks like this (put your comments inside the div):
+	<div class="footerHeader"> <a href="http://blogcfc.riaforge.org">BlogCFC</a> was created by <a href="http://www.coldfusionjedi.com">Raymond Camden</a>. This blog is running version #application.blog.getVersion()#. <a href="#application.rooturl#/contact.cfm">Contact Blog Owner</a></div>
+
+4. To maintain the required link for Ray Camden I put it in a different place (plus a link for ICND):
+	In this file: includes/pods/tagcloud.cfm
+	Scroll to the bottom and add the following lines just before the </cfmodule>:
+	<center>
+  	<a href="http://www.icoastalnet.com/search-engine-optimization.cfm" target="_blank" title="Search Engine Optimization"><img src="http://www.icoastalnet.com/images/seo-4.gif" alt="Search Engine Optimization" border="0" /></a>
+  	<br> 
+	<a href="http://www.coldfusionjedi.com" rel="nofollow" target="_blank"><img src="http://www.icoastalnet.com/images/blogcfc22.jpg"></a>
+    	</center>
+
+5. Remove the default Admin Area image uploader so they use the FCKeditor one.
+	In this file:  /admin/entry.cfm
+	Scroll down to around line 450 and comment out this line:
+	<a href="" id="uploadImage">[Upload and Insert Image]</a> / <a href="" id="browseImage">[Browse Image Library]</a>
+
+6. Change the blog post titles.
+	The last step is to modify the blog post titles and meta tags displayed. Actually we will replace all of the code 
+	of the blog before the <body> section starts.
+	Open the tags/layout.cfm file and delete all of the lines from the top of the file
+	down to where the </head> closes the head code.
+	You can just delete those lines and replace them with this:
+
+		<cfsetting enablecfoutputonly=true>
+<cfprocessingdirective pageencoding="utf-8">
+
+<cfif thisTag.executionMode is "start">
+
+<cfif isDefined("attributes.title")>
+	<cfset additionalTitle = "" & attributes.title>
+<cfelse>	
+	<cfset additionalTitle = "">
+	<cfif isDefined("url.mode") and url.mode is "cat">
+		<!--- can be a list --->
+		<cfset additionalTitle = "">
+		<cfloop index="cat" list="#url.catid#">
+		<cftry>
+			<cfset additionalTitle = additionalTitle & " " & application.blog.getCategory(cat).categoryname>
+			<cfcatch></cfcatch>
+		</cftry>
+		</cfloop>
+	
+	<cfelseif isDefined("url.mode") and url.mode is "entry">
+		<cftry>
+			<!---
+			Should I add one to views? Only if the user hasn't seen it.
+			--->
+			<cfset dontLog = false>
+			<cfif structKeyExists(session.viewedpages, url.entry)>
+				<cfset dontLog = true>
+			<cfelse>
+				<cfset session.viewedpages[url.entry] = 1>
+			</cfif>
+			<cfset entry = application.blog.getEntry(url.entry,dontLog)>
+			<cfset additionalTitle = "#entry.title#">
+			<cfcatch></cfcatch>
+		</cftry>
+	</cfif>
+</cfif>
+
+<cfoutput>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>#additionalTitle#: #htmlEditFormat(application.blog.getProperty("blogTitle"))#</title>
+
+	<meta name="robots" content="index,follow" />
+
+		<meta name="title" content="#additionalTitle#: #application.blog.getProperty("blogTitle")#" />
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+		<meta name="description" content="#additionalTitle# - #application.blog.getProperty("blogDescription")#" />
+		<meta name="keywords" content="#additionalTitle#, #application.blog.getProperty("blogKeywords")#" />
+
+	<link rel="stylesheet" href="#application.rooturl#/includes/layout.css" type="text/css" />
+	<link rel="stylesheet" href="#application.rooturl#/includes/style.css" type="text/css" />
+	<!--- For Firefox --->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="#application.rooturl#/rss.cfm?mode=full" />
+	<script type="text/javascript" src="#application.rooturl#/includes/jquery.min.js"></script>
+	<script type="text/javascript">
+	function launchComment(id) {
+		cWin = window.open("#application.rooturl#/addcomment.cfm?id="+id,"cWin","width=550,height=700,menubar=yes,personalbar=no,dependent=true,directories=no,status=yes,toolbar=no,scrollbars=yes,resizable=yes");
+	}
+	function launchCommentSub(id) {
+		cWin = window.open("#application.rooturl#/addsub.cfm?id="+id,"cWin","width=550,height=350,menubar=yes,personalbar=no,dependent=true,directories=no,status=yes,toolbar=no,scrollbars=yes,resizable=yes");
+	}
+	function launchTrackback(id) {
+		cWin = window.open("#application.rooturl#/trackbacks.cfm?id="+id,"cWin","width=550,height=500,menubar=yes,personalbar=no,dependent=true,directories=no,status=yes,toolbar=no,scrollbars=yes,resizable=yes");
+	}
+	<cfif isDefined("url.mode") and url.mode is "entry"	and application.usetweetbacks and structKeyExists(variables, "entry")>
+	$(document).ready(function() {
+		//set tweetbacks div to loading...
+		$("##tbContent").html("<div class='tweetbackBody'><i>Loading Tweetbacks...</i></div>")
+		$("##tbContent").load("#application.rooturl#/loadtweetbacks.cfm?id=#entry.id#")
+	})
+	</cfif>
+	</script>
+</head>
+
+
+

@@ -1,0 +1,1 @@
+<cfinclude template="/sales/index.cfm">

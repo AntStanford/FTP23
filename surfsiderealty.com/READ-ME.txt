@@ -1,0 +1,100 @@
+**************************************************************
+  ICND CMS 1.0										                           
+  Author: Jonathan Richey (2012)
+**************************************************************
+
+  
+This CMS is slightly based from the CFWheels framework where you don't have physical .cfm files.
+
+Everything is re-routed to the index.cfm file using the .htaccess file.
+
+In the index.cfm page, we are doing a query on the database to find the page using the url.slug.
+
+Once we find the page, we have options for using the default layout or a custom layout, which is usually the case with
+the homepage. So in the the `pages` table, at the very minimum you need a Home page with 'index' as the slug. Then set the `layout`
+column = 'home.cfm'. 
+
+
+-----------------------------------------------------------------------
+Contents:
+-----------------------------------------------------------------------
+1. Structure
+2. Database
+3. Getting Started
+4. Error Trapping/Page Not Found
+
+
+-----------------------------------------------------------------------
+1. Structure
+-----------------------------------------------------------------------
+
+  .htaccess => redirects all page requests to index.cfm and passes in the slug
+  
+  /admin    => admin control panel
+  
+  /blog     => custom CF blog to use instead of WP
+  
+  /components => put your common elements here such as header.cfm, footer.cfm, sidebar.cfm, etc.
+  
+  /images => well....you know, put your images here..duh. Try to use sub-folders for layout and other modules like staff, gallery
+  photos, property photos, etc.
+  
+  index.cfm  => this is where all the magic happens
+  
+  /javascripts => put all your .js files here
+  
+  /layouts => layout files for home page, interior pages and any other custom templates
+  
+  /partials => set database column = Y; then create a .cfm page with the same name as the slug and insert file in this folder;
+                I use these pages for stuff like forms, video, etc. anything that needs to go on a page but doesn't need to
+                be in the page text editor
+                
+  /stylesheets => .css files
+  
+  /userfiles => when users add images to the page text editor in the backend, those images get uploaded here 
+  
+  /submit.cfm => this file processes all my forms such as contact form, newsletter form, etc. That way all the cfmail and 
+                cfqueries are in the same place
+  
+  /page-not-found.cfm => send all requests here for pages not found, virtual pages and pages with .cfm    
+  
+  
+-----------------------------------------------------------------------
+2. MySQL Database
+-----------------------------------------------------------------------          
+              
+
+
+  Drill down into the admin folder, then find the module folder you want/need. Each folder contains a SQL.txt
+  with the code you need to create a basic empty table. For some modules, I also provide basic data you can
+  insert to get you running in no time.
+
+
+
+-----------------------------------------------------------------------
+3. Getting Started
+----------------------------------------------------------------------- 
+  
+  1. Duplicate the jonathan1 database and rename
+  2. Create a datasource pointing to your new database
+  3. Copy the entire jonathan1 folder and rename
+  4. Update the datasource in the Application.cfc files in the root and 'admin' folder  
+  5. The admin can be accessed via http://yourdomain.com/admin
+  6. The default login is ICND / ICNDrox!            
+  
+
+-----------------------------------------------------------------------
+4. Error Trapping/Page Not Found
+----------------------------------------------------------------------- 
+
+  
+  In the Application.cfc, we have two functions to catch issues that happen on the site.
+  
+  onMissingTemplate: This will catch pages that do not exist and re-direct the user to the /page-not-found.cfm page
+  
+  onError: If there is a programming error such as bad query, undefined variable, etc, the user will be
+  redirected to /error and an email will be sent to whoever is listed in the function, letting them
+  know what the error was and where to find it
+
+  Both of these can be setup to send yourself an email if you like.
+

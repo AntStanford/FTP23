@@ -1,0 +1,111 @@
+IF YOU HAVE ANY QUESTIONS AT ALL ABOUT THESE INSTRUCTIONS, 
+CONTACT ADAM AT adam@icoastalnet.com
+
+
+Installing Blog CFC code on websites on our servers.
+----------------------------------------------------
+
+The main files for this blog are on our Dev server in the Code Library here:
+/CodeLibrary/codeLibrary/blogcfc
+
+Copy that etire "blogcfc" directory into their site root directory.
+Then rename that directory to "blog"
+
+Now set up the database - 
+In Navicat, copy all of the database structures from the "blogcfc_new" database 
+over to their database for the site.
+You can find their DSN for their database by looking at their application.cfm file in the
+root directory for their website. If you can't find their DSN or they don't already have
+a database set up, you may need to ask Randy to add a database and datasource.
+
+After you copy the database tables over, go in the TBLUSERS table and set their
+blog admin login and password, as well as the Name field. 
+This one is displayed with the blog entries so make it their business name.
+I often try to make the blog login and password the same as the one for
+their other website admin area.
+
+Now in the blog directory, open the following file to edit:
+org/camden/blog/blog.ini.cfm
+Change the DSN to your datasource name (use the same one that is listed in their 
+websites main application.cfm file)
+Also change all of the other stuff to make it unique (MOSTLY ONLY THE STUFF IN BOLD NEEDS CHANGED)
+Everythinge else that is blank can be left as-is. The ones that are blank can be left blank.
+
+(if having more than one blog on a site, like if
+doing subdomains, then also change the [default] at the top to
+[SomeOtherName] NO HYPHENS!!!! and then go open the
+application file in the blog root and change the cfset blogname
+to that new name also.
+
+May need to check in the file  /tags/textarea.cfm
+that the blog directory name is specified correctly in the file basePath.
+I would also change the fckEditor width down below in that file to what the actual width
+of the body of their blog on their site will be (don't count the sidebar menu). That way
+when they are adding or editing blog entries they will see it in the same width
+as it will be when it posts to the page.
+
+Now try to view this file in your browser (change the website and blog directory name to their actual one):
+ http://website.com/BLOG-DIRECTORY-NAME/info22.php
+If you get an error there you need to ask Randy to enable PHP for their website. This will enable more
+backend functionality to their blog features. 
+
+Now the blog admin area should be working on the domain.
+You should be able to go to the website address for the blog admin area in your browser to finish customizing it.
+ http://website.com/BLOG-DIRECTORY-NAME/admin
+
+Go ahead and click "Add Entry" and add one initial "Welcome to..." blog entry now.
+This will help you to be able to test the page layout with a blog entry in place.
+For the category name, put in their main keyword phrase for their website
+(Myrtle Beach real estate, Charleston hotels, Sunset Beach vacation rentals, etc).
+
+After adding their first entry and submitting it, go ahead and add a few more categories
+to their blog using about 10 more of their top keyword phrases. 
+( you can leave this to Adam if you are not sure about the specific phrases to use).
+
+Now to make the blog layout match their website you need to
+grab some sample page code and paste it into this file:
+/tags/layout.cfm 
+I usually pick a generic page on their site like this one
+http://www.dumontbrothers.com/pressrelease.cfm
+so that I can copy and paste the source code before and after the blank body section
+and paste it into the layout.cfm file where the pieces go before and after the
+blog divs. Don't forget to also copy in any necessar stylesheet or script tags
+to the head of the layout.cfm file, as well as any "body onload" info that needs
+included in the body tag.
+
+You will need to be sure that all images and page paths in the copied code are relative to the website root
+(starting with a forward slash such as /imgages/top.jpg   ). The same goes with all links to CSS and script files.
+Otherwise the blog links and images will all be bad.
+
+Also, all inline color references in the code need to be escaped with a second # or they will break the CF code.
+So color references need to look like this to be correct:  ##FFFOOO
+
+If necessary, you can also rearrange the DIV's so they are arranged the way you want on the page
+(for example if you are trying to put the blog sidebar into a different location such as below their existing sidebar navigation).
+
+Next, this file needs edited to match the website style fonts and colors;
+includes/style.css
+and possibly this one also if the main body widths are not fitting in the page body:
+includes/layout.css
+
+When all is done and the blog is working correctly and and looks good, be sure to cross browser check it
+in Firefox, IE 6, IE 7 and Safari, then let Adam know the blog is ready to roll and he will work with the
+client on where they would like the links added to their site.
+
+Thanks!
+===========================
+
+Multiple Blogs on One Domain (or subdomain blogs, etc using the same DB)
+
+If you are adding multiple blogs on one domain, for example subdomains on
+the same domain, you only have to copy all of the files over to the subdomain, then change:
+/application.cfm ==> blogname
+/tags/layout.cfm ==> mydirectoryname and mycityname
+/org/Camden/blog/blog.ini.cfm ==> the normal bunch of stuff, including [defuault] blog name at the top.
+
+They have made changes to this recently so you may need to have multiple user names
+and user roles assigned to get this working correctly. Get ahold of Adam if you 
+need help with it or get in a jam trying to get it working.
+
+
+IF YOU HAVE ANY QUESTIONS AT ALL ABOUT THESE INSTRUCTIONS, CONTACT ADAM AT adam@icoastalnet.com

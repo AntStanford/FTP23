@@ -1,0 +1,142 @@
+/* Custom CSS */
+
+.controls ul>li>ul>li>select {
+width: 80%;
+display: inline-block;
+position: relative !important;
+top: -3px !important;
+}
+
+input[type="submit"]{
+height:30px;
+color: #fff;
+background-color: #9eb58c;
+border-color: #91ab7c;
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+/*padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 9px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;*/
+padding: 5px 10px;
+font-size: 12px;
+line-height: 1.5;
+border-radius: 3px;
+border-radius: 15px;
+width: 100%;
+}
+
+input[type="submit"]:hover {background-color:#84a16d;border-color:#728f5c}
+
+.tracker .tracker-panel .wait .bootstrap-select {margin-bottom: 7px;}
+
+.tracker .tracker-panel .wait p.sent {color:#b58a8b;}
+
+#StepOneTime, #StepTwoTime, #StepThreeTime, #StepFourTime, #StepFiveTime {margin-top:10px;}
+#StepOneTimeSelect,#StepTwoTimeSelect,#StepThreeTimeSelect,#StepFourTimeSelect,#StepFiveTimeSelect {width:43px;}
+
+#upload-file1 {background-color: #e7efe2;border: 0;box-shadow: none;}
+#upload-file2 {background-color: #e7efe2;border: 0;box-shadow: none;}
+#upload-file3 {background-color: #e7efe2;border: 0;box-shadow: none;}
+#upload-file4 {background-color: #e7efe2;border: 0;box-shadow: none;}
+#upload-file5 {background-color: #e7efe2;border: 0;box-shadow: none;}
+
+.reminder label {font-weight:bold;}
+
+.contact-detail section:first-of-type>.panel>.panel-body>header .ProfileUpdated {color:red;font-size: 14px;margin-left:10px;}
+
+.graybox-message {float:left;color:black;text-align: left;}
+.graybox-message-close {width: 10%;float: right;}
+
+h2.contacts-pagination {float:left;width:40%;font-size: 21px;color: #577d87;}
+.contacts-pagination-area {display: inline;float: left;width: 50%;margin: 10px;}
+.contacts-pagination-area .newRow {width:10%;display:inline-block;}
+.contacts-pagination-area .newRow input[type="button"] {background-color: #9eb58c;color:#fff;}
+.contacts-pagination-area .viewing {display:inline;float: right;top: 5px;position: relative;}
+
+.panel .panel-heading h2 a {color:#777;}
+.panel .panel-heading h2 a:hover {color:#577d87;}
+
+
+#CreateMessageTable {width:100%;} 
+#CreateMessageTable .col1 {text-align:left;width:200px;padding: 5px;} 
+#CreateMessageTable input[type="text"] {width: 100%}
+#CreateMessageTable .col2 {text-align:left;padding: 5px;} 
+#CreateMessageTable input[type="submit"] {width: 50%;font-size: 16px;height: 35px;}
+
+#user-name {color:#577d87;}
+
+#dripSearch {width:100%;}
+#dripSearch input[type="text"], #dripSearch select {width: 80%}
+#dripSearch input[type="submit"] {width: 45%;float:left;margin-left:5px;}
+
+#content-area {margin-top: 15px;}
+
+
+@-moz-document url-prefix() { 
+  .resultSelector {
+     position: relative;top:-10px;
+  }
+}
+
+/*body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.new {color: #6be757;}
+body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.qualify {color: #93d0db;}
+body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.nurture {color: #a1a915;}
+body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.watch {color: #775ff0;}
+body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.hot {color: #ba0000;}
+body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.cold {color: #0030ff;}
+body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.closed {color: #ff00f0;}
+body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.pending {color: #e4800b;}
+body.leadtracker>.container>section>.panel>.panel-body>table>tbody>tr>td.trash {color: #905e08;}*/
+
+.history-panel {width:100% !important;}
+.history-heading, .history-results {display: inline-block;width: 100%;}
+.history-heading li, .history-results li {float:left; width:25%;}
+
+.green {color:green;}
+
+.left {text-align: left !important;}
+
+/*controls phone icons on dashboard*/
+.phone-talking {background-position: 0 0 !important;}
+.phone-valid {background-position: 0 24% !important;}
+.phone-unknown {background-position: 0 50% !important;}
+.phone-donotcall {background-position: 0 72% !important;}
+.phone-wrong  {background-position: 0px 98% !important;}
+
+#searchresultsActionChange {color: #FFF;
+text-align: left;
+background-color: #a1a915;}
+
+.headlinks {vertical-align: middle;
+display: inline-block;
+margin-right: 4.5%;}
+
+
+li.library {float: left;width: 8.33333333%;}
+
+select.driplibrary {width:66%;}
+
+.drip-campaign-lead header:first-of-type>.panel>.panel-body {height: 280px;}
+
+.contact-detail-phonecall {background: url('/admin/leadtracker/img/leadtracker-icons-calls.png') no-repeat 0 0;height: 25px;width: 25px;overflow: hidden;display: inline-block;position: absolute;right: 0%;left: 93%;top: 15%;}
+
+
+body.leadtracker .container section .panel .panel-heading ul li input {width:27px;}
+
+.redbutton {background-color: #FF6666!important;border-color: #FF4D4D !important;}
+.bluebutton {background-color: #80B2FF!important;border-color: #66A3FF !important;}
+
+.exportbutton {width:80% !important;color:white !important;}
+ 

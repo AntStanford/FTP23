@@ -1,0 +1,55 @@
+div.autoImage img,
+img.largeimage,
+img.size-full {
+    width: 100% !important;
+    margin:0 auto 2rem auto;
+    height: auto !important;
+}
+
+.well-gray {
+    background-color: #efefef !important;
+}
+
+
+.body ul {
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.body ul li {
+    margin:0 0 2rem 2rem !important;
+    padding:0 !important;
+    list-style-type: disc !important;
+}
+
+.body ol {
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.body ol li {
+    margin:0 0 2rem 2rem !important;
+
+    padding:0 !important;
+    list-style-type: disc !important;
+}
+
+
+
+
+
+.body p:empty {
+    display:none;
+}
+
+
+.body h3 {
+    line-height: 80% !important;
+    margin: 3rem 0 2rem 0;
+    font-size: 3rem;
+}
+
+
+.body h1 {
+    margin: 3rem 0;
+}

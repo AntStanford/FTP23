@@ -1,0 +1,6 @@
+CREATE TABLE `faqs` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `question` text,
+  `answer` text,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;

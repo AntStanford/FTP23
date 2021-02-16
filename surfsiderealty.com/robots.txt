@@ -1,0 +1,10 @@
+User-Agent: *
+Disallow: /rentals/book-now.cfm*?*
+Disallow: /event-calendar/index.cfm*?*
+Disallow: /event-calendar/allday.cfm*?*
+Disallow: /rentals/print.cfm*?*
+Disallow: /blog/wp-admin/
+
+Allow: /blog/wp-admin/admin-ajax.php
+
+Sitemap:https://www.surfsiderealty.com/sitemap.xml

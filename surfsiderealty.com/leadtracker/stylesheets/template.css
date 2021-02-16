@@ -1,0 +1,197 @@
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit}del,ins{text-decoration:none}li{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}legend{color:#000000}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}input,button,textarea,select{font-size:100%}body{background:#fff;color:#444;font-size:12px}h4{font-size:28px}h5{font-size:18px}h6{font-size:14px}p{margin:0 0 1em 0;line-height:22px}td,th{vertical-align:top;padding:0;margin:0;border:0}b,strong{font-weight:bold}input,textarea{border:none;padding:5px 8px;font-size:12px}button{border:none;padding:5px 8px;font-size:12px;cursor:pointer}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{background:#fff;color:#444;font-size:12px}a{text-decoration:none;outline:none}p{margin:0 0 1em 0;line-height:22px}td,th{vertical-align:top;padding:0;margin:0;border:0}b,strong{font-weight:bold}input,textarea{padding:5px 8px;font-size:12px}button{border:none;padding:5px 8px;font-size:12px;cursor:pointer}
+
+/* Layout */
+body{color:#444;font:normal 12px/20px "Lucida Sans Unicode","Lucida Grande",sans-serif;background:#F3F1DE}
+a {color:blue;}
+input, textarea{border:1px #ccc solid;background:url(/admin/images/input.png) top left repeat-x;background-color:#fefefe;}
+input[type=submit], .content .view-all, .checkTotals{background:#444;color:#fff;border:none;padding:5px 25px;float:right;border:none;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;cursor:pointer;font-size:12px;line-height:17px}
+input[type=submit]:hover, .content .view-all:hover, .checkTotals:hover{background:#777}
+input[type=checkbox], input[type=radio]{margin:0 5px 0 10px}
+textarea{width:300px;height:100px}
+.wrapper{margin:0}
+.nav{overflow:hidden;height:69px;background:#444}
+.nav li{float:left;padding:6px 4px 0}
+.nav li a{color:#e3e3e3;text-decoration:none;display:block;padding:5px 20px 5px;font:12px Verdana;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;text-shadow:0 1px 1px #000}
+.nav li a:hover, .nav li a.page-highlight:hover{background:#666;color:#fff}
+.nav li a.page-highlight{background:#999;color:#fff}
+.nav li a.logout{color:#b0b0b0;background:#000}
+.nav li a.logout:hover{background:#a70000;color:#fff}
+h3{margin:0;padding:10px 10px 7px;background:#F3F2EB;color:#444;font:15px Helvetica;border-bottom:1px #ccc solid}
+h3 span{color:#777;font:12px Helvetica}
+.main{padding:20px}
+.content{padding:35px;background:#fff;border:1px #ccc solid;overflow:hidden}
+
+.content2{padding:35px;background:#fff;border:1px #ccc solid;overflow:hidden; width: 78%; float: left; font-size: 11px;}
+
+.content h2{margin:0 0 15px;border-bottom:1px #eee solid;padding:0 0 5px;font:bold 23px Helvetica;color:#1c57b8}
+.content h4{margin:24px 0 0;font:bold 18px Helvetica;color:#8B1C11}
+.content select{position:relative;top:0;}
+.content form input[name=firstname], .content form input[name=lastname] {width: 110px;}
+.content form input[name=startdate], .content form input[name=enddate] {width: 80px;}
+.content form input[name=email] {width: 110px;}
+.content table{width:100%;margin:10px 0}
+/*.content table tr:hover{background:#FFFDD1}*/
+.content table td, .content table th{padding:3px 6px;border:1px #eee solid}
+.content table th{font-weight:bold}
+.content .table-head{background:#EEF4FE}
+.content .table-head strong{color:#545e6f;font:bold 15px Helvetica;display:block;padding:6px 0 2px}
+.content .add-new{background:url(/admin/images/add.png) #5d7a65 8px 8px no-repeat;margin:10px 0 0;float:right;display:block;padding:8px 0;text-align:center;width:200px;color:#fff;font:bold 14px "Lucida Sans Unicode","Lucida Grande",sans-serif;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;text-shadow:0 1px 1px #000}
+.content .add-new:hover{background:url(/admin/images/add.png) #74947d 8px 8px no-repeat}
+.content .edit{font-size:11px;display:block;color:#1C57B8;background:url(/admin/images/page_white_edit.png) top left no-repeat;text-indent:20px}
+.content .delete{font-size:11px;display:block;color:#1C57B8;background:url(/admin/images/page_white_delete.png) top left no-repeat;text-indent:20px}
+.content .edit:hover, .content .delete:hover{text-decoration:underline}
+.content .aed-width{width:45px}
+.content ul li a{background:#F8F8F8;border:1px solid #EEEEEE;color:#1C57B8;display:block;margin:4px 0;padding:1px 0;text-align:center;}
+.content ul li a:hover{background:#eee}
+.content .dashboard tr:hover{background:none}
+.monthly th{text-align:center;font-weight:bold;color:#1C57B8}
+.monthly td{font-size:11px;color:#666;text-align:center;vertical-align:middle}
+.monthly input, .monthly textarea{width:100px;height:15px;font-size:11px;padding:3px 4px}
+.monthly select{left:0}
+#addnewmonthlyrow, #addnewcontact, #addnew{display:block;background:url(/admin/images/add.png) #5d7a65 6px 5px no-repeat;color:#fff;padding:4px 15px 2px 25px;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;line-height:20px;font-size:11px}
+#addnewmonthlyrow:hover, #addnewcontact:hover, #addnew:hover{background:url(/admin/images/add.png) #74947d 6px 5px no-repeat}
+.remove{font-size:11px;display:block;color:#1C57B8;background:url(/admin/images/page_white_delete.png) top left no-repeat;text-indent:20px}
+#salesreport input[type=text]{width:91%;text-align:center;padding:5px 0;font-size:11px}
+#salesreport .td-center{text-align:center;vertical-align:middle}
+#salesreport{font-size:11px}
+.checkTotals{float:right;margin:0 10px 0 0}
+
+.content2 .table-2 input[name=email] {width: 112px;}
+.content2 .table-1 input, .content2 .table-2 input, .content2 .table-3 input {margin-bottom: 3px;}
+.content2 .table-3 {border: 1px solid #ccc;margin-bottom: 10px}
+.content2 .table-3 td {padding: 0 5px 0 5px;}
+.content2 .contact-card {margin:10px 0; width: 175px; border: 1px solid #ccc;}
+.content2 .contact-card .contact-name, .content2 .contact-card tr td a {background:#12a022; color: #fff; padding:0 0 0 5px; text-align: left;}
+.content2 .contact-card p {margin: 0; padding: 3px 4px; text-align: left; line-height: 12px;}
+.content2 .desc {min-width: 80px;}
+.content2 .lists {width: 100%}
+.content2 .lists th {border: 1px solid #ccc;}
+.content2 .contact-notes { margin: 25px 0 0; border: 1px solid #ccc;}
+.content2 .contact-notes td {padding: 5px;}
+.content2 .contact-pagination { margin: 10px 0 0; border: 1px solid #ccc;}
+.content2 .contact-pagination td {padding: 5px;}
+.content2 .response-bar {position: relative; margin: 0 0 40px;}
+.content2 h2.response {float: left; border: 0; font-size: 20px;}
+.content2 h2.c-response {float: right; color: red; border: 0; padding: 3 0 0 50px; font-size: 17px;}
+.content2 .client { position: relative; top: 20px; left: 270px; font-size: 20px;}
+.listed {font-size: 12px; width: 100%}
+.listed th {border: 1px solid #ccc; padding: 5px;}
+.listed td {height: 25px; border: 1px solid #ccc; padding: 5px;}
+.grey {background: #eee;}
+.view {margin:20px 0;}
+.sort {padding: 15px 20px 3px; margin: 0 0 15px 0; border: 1px #ccc solid; background: #eee; position: relative;}
+.sort:after{display: table;content: "";clear: both;}
+.sort p {float: left; margin:0 100px 0 0}
+.sort ul {position:relative; z-index:8000;}
+.sort li {float: left; padding: 0 5px; font-size: 18px;}
+.sort form {position: relative; top: -5px; left: 50px; }
+.sort form input[name=quantity] {width: 35px;}
+.sort form input[name=page] {width: 63px; margin: 0 0 0 50px;}
+.hh-calendar {float: left; margin: 0 0 0 18px; width: 12%;}
+.recent-items, .actions, .items {background: #fff; width: 200px; padding: 3px;}
+.actions, .items {margin-top: 25px;}
+.recent-items h2, .actions h2, .items h2, .view h2, .add-new, .ltmc {background:#12a022; padding:5px 10px; font-size:16px; text-align:left; color:#fff; width:180px; margin: 0 0 5px 0;}
+.ltmc {display: inline; margin-left: 66px;}
+.mc-calendar td {border: 1px solid #ccc; width: }
+.activities {margin-top: 10px;}
+.actions a, .actions a:visited, .activities.a, .activities:visited {color:#444;}
+.actions a:hover, .activities a:hover {color:black;text-decoration:underline;}
+
+/* Login */
+.login{width:100%;margin:100px 0 0 0;z-index:2;position:relative}
+.login h2{margin:0 0 15px;border-bottom:1px #eee solid;padding:0 0 5px;font:bold 23px Helvetica;color:#1c57b8}
+.login td{padding:3px;vertical-align:middle}
+.log-wrap{background:#fff;padding:40px;width:235px;-moz-box-shadow:0 0 8px 3px rgba(0, 0, 0, 0.2);-webkit-box-shadow:0 0 8px 3px rgba(0, 0, 0, 0.2);}
+.log-wrap label{display:none}
+.bkg-overlay{background:#444;height:173px;width:100%;position:absolute;top:0;left:0;z-index:1}
+.bkg-overlaylogin{background:#101010;height:173px;width:100%;position:absolute;top:0;left:0;z-index:1}
+#ie7 .login, #ie6 .login{position:relative;top:100px;left:0}
+
+/* Added by Jonathan */
+.error{color:red}
+p.flash{color:red}
+label{font-weight:bold}
+
+div.flashbar {background-color: #FFBe73;color:#444;border: 1px solid #CCC;padding: 5px;width: 100%;margin-bottom:5px;}
+
+ul.contacttabs ul {width: 100%;}
+ul.contacttabs li{float:left;width:9.5%;text-align: center;}
+ul.contacttabs a {color: #444;font-size: 11px;}
+ul.contacttabs a:hover {text-decoration: underline;}
+ul.contacttabs a.highlight {background-color: #444;color: white;padding: 8px 3px 8px 3px;}
+ul.contacttabs a.subhighlight{font-weight:bold;}
+
+.contact-notes td.head {text-decoration: underline;font-weight:bold;}
+
+div.message {float:left;border: 1px solid gray;background-color: #FFF;color: black;padding: 10px 15px 10px 15px;width: 90%;margin: 0 auto;margin-top: 10px;margin-bottom: 10px;font-size: 14px;}
+div.message-close {float:left;margin: 15px 0 0 15px;position:relative;}
+div.infobox-gray {font-style:italic;border: 1px solid #CCC;background-color: #F3F2EB;color: black;padding: 10px 15px 10px 15px;}
+
+tr.listing {background-color:#FFF;}
+tr.listing:hover {background-color:#f3f0dd;}
+tr.listing a.refer {color:#44677D;}
+tr.listing a.refer:hover {text-decoration: underline;}
+
+li.reminder{margin-bottom: 8px;}
+li.reminder img{position: relative;top: 4px;padding-right: 4px;}
+
+.listingprofile {width:100%;margin: 0 auto;background-color:#F3F2EB;}
+.listingprofile td {font-size:14px;font-style: normal;font-weight: normal; color:#000;}
+.listingprofile td span {margin:0px !important; color:gray;}
+.listingprofile td input {float:none !important;margin-bottom: 10px;cursor:pointer}
+
+input.add-listing {height: 27px;font-size: 11px;margin: 0;padding: 0;position: relative;cursor: pointer;width: 70px;}
+
+input.activitybox {width:90px;}
+
+td.calendardate {background-color: white;}
+td.calendardate:hover {background-color: yellow;}
+
+input[type="button"]
+{
+cursor:pointer
+}
+
+/*NEW DASHBOARD STUFF*/
+
+.dashboard-nav{width:100%;margin: 0 0 20px 0;}
+.dashboard-hav-title{float:left;width:20%;font-size: 20px;}
+.dashboard-hav-links{float:right;width:20%;font-size: 14px;text-align: center;}
+.dashboard-hav-links a.thispagecount {color:#B22222;text-decoration: underline;}
+.dashboard-hav-links a.pagecount {color:#B22222;text-decoration: none;}
+.dashboard-hav-links a.pagecount:hover {text-decoration: underline;}
+.dashboard-hav-links a.thispage {color:#4682B4;text-decoration: underline;}
+.dashboard-hav-links a {color:#4682B4;}
+.dashboard-hav-links a:hover{text-decoration: underline;}
+
+
+td {text-transform: capitalize;}
+td.results-contact{background-image:url(/admin/images/icon-checkmark.gif);background-repeat:no-repeat;background-position: 5px 5px;padding-left: 30px;background-size: 20px 20px;}
+td.results-contact2{background-image:url(/admin/images/icon-checkmark-grey.gif);background-repeat:no-repeat;background-position: 5px 5px;padding-left: 30px;background-size: 20px 20px;}
+td.results-contactinfo a img{width:20px;height:20px;}
+
+td.results-favs{width:25px;background-image: url(/admin/images/icon-heart.gif);background-repeat: no-repeat;background-position: 5px 15px;padding: 25px 0 0 23px;background-size: 20px 17px;}
+/*td.results-emails{background-image: url(/admin/images/icon-email.gif);background-repeat: no-repeat;background-position: left center;padding: 25px 0 0 25px;}*/
+/*td.results-emails{width:25px;background-image: url(/admin/images/icon-email.gif);background-repeat: no-repeat;background-position: 5px 17px;padding: 25px 0 0 29px;background-size: 20px 14px;}*/
+td.results-emails{width:25px;padding: 25px 0 0 29px;}
+td.results-emails a img {position: relative;left: -20px;top: -7px;}
+td.results-emails a.emailcount {position: relative;left: 7px;top: -16px;}
+td.results-views{width:35px;background-image: url(/admin/images/icon-views.gif);background-repeat: no-repeat;background-position: 5px 15px;padding: 25px 0 0 24px;background-size: 20px 14px;}
+td.results-showings{width:25px;/*background-image: url(/admin/images/icon-cal.gif);*/background-repeat: no-repeat;background-position: 6px 15px;padding: 25px 0 0 28px;background-size: 19px 21px;position: relative;left: -20px;top: -12px;}
+td.results-showings a.showcount{position: relative;left: 28px;top: -13px;}
+td.results-calls{width:25px;/*background-repeat: no-repeat;background-position: 5px 15px;*/padding: 25px 0 0 25px;/*background-size: 15px 20px;*/}
+td.results-calls a img {position: relative;left: -20px;top: -12px;}
+td.results-calls a img:hover {border-color: blue;}
+td.results-calls a.phonecount {position: relative;left: -14px;top: -13px;}
+td.notes{height:13px;background-color: #FFF8EF;}
+td.results-lastlogin{width: 25px;}
+td.results-created{width: 60px;}
+td.results-site{width: 30px;}
+td.results-status{text-align:center;color:black;}
+td.results-status div{margin:5px 0 0 0;text-align:center;}
+td.results-blank {border:none;}
+.listed td a:hover {text-decoration: underline;}
+
+.sort .ajaxlinks {font-size:14px;color:#4682B4;text-decoration: none;}
+.sort .ajaxlinks:hover {text-decoration: underline;}

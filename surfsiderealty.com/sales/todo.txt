@@ -1,0 +1,147 @@
+Add to WIKI - 
+Google Calendar - admin/calendar/application.cfm needs DSN and application name changed to what ever you set them to in the /application.cfc file.  Same for googlecalendar.cfc in the root
+
+Send bulk email - spam server setting
+
+
+
+
+
+
+
+drip campaigns - when created needs to pull in agentid when logged in as an admin
+
+
+HFL
+*****************
+Need Logo
+Need Header / Footer for emails.
+Needs leadtracker unattended email setup.
+
+
+MLS20Holder >> ctarmls_commercial_sale needs to get imported into the mastertable.  When doing so, match CATEGORY_COM_SALE to Property_Type in our database.
+
+****************
+
+
+Add alternating fields colors in CP
+
+Facebook integration, pull photo, phone numbers etc.
+
+Help with Market Trends
+
+Lead Tracker attachemnts
+
+Look into dontcountreload adding twice into URL string
+
+
+MASTERTABLE Adjustments
+Changed Total_Heated_Square_Feet to data type INT
+Changed association_fee to 255 characters
+
+http://www.searchcharlestonrealestate.com/search-by-area.html
+
+
+CJ
+http://brandon2.icnd.net/mls/property-details.cfm?mlsnumber=1111164&mlsid=3&wsid=2&dontcountreload=&dontcountreload= - agent on duty
+Need to style the enotify page
+Fancy up the Printer Friendly page
+Alternate row colors in the CP
+
+ADAM
+665137 - no area ILM, but listed in BC and 655998
+Zoom settings
+
+
+Jonathan
+Components folder
+
+
+************************SALES FORCE CALL********************************8
+
+Profession $750 per user / per year  No API
+Enterprise $1500 per user / per year API
+
+Alert admin when activity  has not happened in a few days
+
+Build out a calendar function so you can schedule your tasks
+ - see snapshot of all agent's calenars
+ http://screencast.com/t/zWg8oMcE6MyA
+ 
+ Lead = Individual
+ http://screencast.com/t/IiEFOf3NB
+ 
+ Taskk Follow up - http://screencast.com/t/g8SE4bxo4y
+ schedule a closing and notify
+ 
+ Known interest for a contact
+  - http://screencast.com/t/FheIoX0Hx
+ 
+ Lead Type - buyer, seller
+ 
+ File Manager - contacts, amendments, etc..
+ 
+ Show pending follow up reminders
+ 
+ What agent are you working with on the deal?  Closing attorney, inspector, seller, para legal, surveyor, lendor
+ Ability to load these into an email to send
+ 
+ Stage History - tracking through the process
+ 
+ Create email template to pre-load
+ 
+ Track last time opened, and how many times they opened the email.  Build into lead tracker
+ http://screencast.com/t/0Jdwkmidr0sL
+ Also try to do this for exporting of leads to listrak and include a tracking link
+ 
+ 
+Graphic dashboard - http://screencast.com/t/QG7NHVR2BVi
+Traffic by community / area
+
+Agent Dashboard http://screencast.com/t/Uuc4r7yN9c and http://screencast.com/t/AWYyZmFEwG and http://screencast.com/t/auxBDL6Y
+
+Need a converted and how much and then a way to archive and keep the profile.  Closing out a sale.
+
+Give the ability to sort you main views.  Give ability to check off and export for mailing.  Sort by zipcode option.
+
+Bulk mailing.  250 per group and 1000 per day per company.
+
+Document Mail Merge for bulk snail mailing
+
+
+
+MORE FINDINGS
+http://www.realprosystems.com/real-estate-agent-websites/platinum/
+
+
+*******************CALL WITH BILL AND RANDY***********************************8
+
+Bulk emailer holding emails need to delete
+Check on most popular property on dashboard
+
+Save to Favorite Bug
+
+Save a Favorite or Save a Search and expand on the advantages of this
+
+
+Randy Smith is your assigned agent! - 
+
+How many came to website and how many signed up
+
+Save the favorites details - even if taken off the market
+
+Follow up reminder - input client informatin in the email.  Also email you the ICalendar to add to personal calendar.
+
+When agent receives a lead needs to show into a report.  Log Activity.
+BCC - special email address to append to lead tracker
+
+Add more to the search profile 
+
+
+
+ERROR
+I uploaded a document and then tried to use leadtracer
+
+
+
+RANDY J. - Total number of active logins on site

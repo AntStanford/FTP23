@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pods>
+	<files>
+	
+		<pod name="recentcomments.cfm" sortorder="3"/>
+	
+		<pod name="recent.cfm" sortorder="2"/>
+	
+		<pod name="rss.cfm" sortorder="6"/>
+	
+		<pod name="search.cfm" sortorder="1"/>
+	
+		<pod name="archives.cfm" sortorder="5"/>
+	
+		<pod name="calendar.cfm" sortorder="4"/>
+	
+		<pod name="tagcloud.cfm" sortorder="7"/>
+	
+	</files>
+</pods>

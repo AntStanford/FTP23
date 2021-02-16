@@ -343,7 +343,7 @@
              <li<cfif cgi.script_name contains "/admin/properties/"> class="active"</cfif>><a href="/admin/properties/"><i class="icon icon-certificate"></i> <span>VR Enhancement</span> <span class="label">0</span></a></li>
            </cfif> --->
 
-<!---            <li<cfif cgi.script_name contains "/admin/data-harvest/"> class="active"</cfif>><a href="/admin/data-harvest/form.cfm"><i class="icon icon-ok"></i> <span>Data Harvest</span></a></li> --->
+            <li<cfif cgi.script_name contains "/admin/data-harvest/"> class="active"</cfif>><a href="/admin/data-harvest/form.cfm"><i class="icon icon-ok"></i> <span>Data Harvest</span></a></li>
 
            <!---
 <cfif FileExists('#adminPath#\rewrites\index.cfm')>

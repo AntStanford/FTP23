@@ -1,0 +1,2 @@
+<!--- This is here for backwards compatability wit the old site - would it be better done with htaccess? --->
+<cfoutput><meta http-equiv="REFRESH" content="0; url=results?#cgi.QUERY_STRING#"></cfoutput><!--- removed .cfm --->

@@ -1,0 +1,951 @@
+STANDARD HTACCESS FILE FROM ICND - Last Updated 4-16-2020
+
+#IMPORTANT NOTES:  Do NOT change the order of any of these items. The ORDER OF OPERATIONS IS VERY IMPORTANT.  If something needs to be ADDED that is not INCLUDED, then please discuss with your department head before adding.
+
+# /////////////////////////////
+# ALWAYS INCLUDED to allow rewrites
+# /////////////////////////////
+
+RewriteEngine On
+
+# /////////////////////////////
+# REDIRECT ANY SUBDOMAINS AND REDIRECT NON WWW TO WWWW
+# /////////////////////////////
+
+#REDIRECTION OF A SUBDOMAIN OF THE MAIN DOMAIN TO THE MAIN DOMAIN (uncomment if needed)
+#RewriteCond %{HTTP_HOST} ^m.maindomain\.com$ [OR]
+
+#REDIRECTION OF ALIAS DOMAIN AND ALIAS DOMAIN SUBDOMAINS TO MAIN DOMAIN (uncomment if needed)
+#RewriteCond %{HTTP_HOST} ^www.aliasdomain1\.com$ [OR]
+#RewriteCond %{HTTP_HOST} ^aliasdomain1\.com$ [OR]
+#RewriteCond %{HTTP_HOST} ^www.aliasdomain2\.com$ [OR]
+#RewriteCond %{HTTP_HOST} ^aliasdomain2\.com$ [OR]
+
+#MAIN DOMAIN NON WWW TO WWW (always leave in)
+RewriteCond %{HTTP_HOST} ^gulfrentals\.com$ [NC]
+RewriteRule ^(.*)$ https://www.gulfrentals.com/$1 [R=301,L,NC]
+
+
+
+
+
+
+# /////////////////////////////
+# Uncomment to make site pure HTTPS
+# /////////////////////////////
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# /////////////////////////////
+# SEO TEAM: 301 DIRECTS GO HERE from SEO TEAM
+# /////////////////////////////
+
+# SEO TEAM - PUT DATE REDIRECTS WERE ADDED HERE AND YOUR INITIALS
+
+##Th 5/22/2020
+
+
+#RewriteCond %{HTTP_HOST} ^bookings\.gulfrentals\.com$
+#RewriteRule ^$ https://www.gulfrentals.com/? [L,R=301]
+
+RewriteRule ^rentals/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/favorites/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/listproperties/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/basketball\-court/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/bay\-front/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/bay\-view/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/bed\-linens\-amp\-towels\-provided/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/bedding\-config/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/bedrooms/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/cabana\-beach\-estates/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/cable\-tvsatellite/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/central\-ac\-amp\-heat/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/covered\-deck/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/deck\-furniture/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/dishwasher/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/dune\-walkover\-from\-unit/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/dune\-walkover/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/duplex/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/dvd\-player/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/floors/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/ft\-morgan\-townhomes/$ /relax\-getaway\-fort\-morgan/? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/full\-bathrooms/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/fully\-equipped\-kitchen/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/ground\-level\-home/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/gulf\-side/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/gulf\-view/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/half\-bathrooms/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/heritage\-shores\-subdivision/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/high\-speed\-internet/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/lagoon\-front/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/location/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/lotsa\-dunes/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/lvg\-rmkitchen\-combo/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/microwave/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/mile\-marker/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/morgantown\-subdivision/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/open\-deck/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/outdoor\-shower/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/pool\-access/$ /search/pool\-homes? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/private\-pool/$ /search/pool\-homes? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/screened\-clubhouse/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/screened\-porch/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/seperate\-kitchen/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/sleep\-cap/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/square\-ft/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/subdivision/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/surfside\-shores/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/telephone/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/tennis\-court/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/unit\-type/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/unlimited\-dvd\-rentals/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/washer\-and\-dryer/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search\-by\-feature/weekly\-only\-year\-round/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/search/$ /rentals/results.cfm? [L,R=301]
+
+RewriteRule ^rentals/specials/$ /specials/? [L,R=301]
+
+RewriteRule ^rentals/properties/3s\-a\-charm/$ /rentals/3s\-a\-charm? [L,R=301]
+
+RewriteRule ^rentals/properties/3s\-a\-charm/gallery/$ /rentals/3s\-a\-charm? [L,R=301]
+
+RewriteRule ^rentals/properties/3s\-a\-charm/print/$ /rentals/3s\-a\-charm? [L,R=301]
+
+RewriteRule ^rentals/properties/5\-sea\-oats/$ /rentals/5\-sea\-oats? [L,R=301]
+
+RewriteRule ^rentals/properties/5\-sea\-oats/gallery/$ /rentals/5\-sea\-oats? [L,R=301]
+
+RewriteRule ^rentals/properties/5\-sea\-oats/print/$ /rentals/5\-sea\-oats? [L,R=301]
+
+RewriteRule ^rentals/properties/a\-house\-of\-3\-sistas/$ /rentals/a\-house\-of\-3\-sistas? [L,R=301]
+
+RewriteRule ^rentals/properties/a\-house\-of\-3\-sistas/gallery/$ /rentals/a\-house\-of\-3\-sistas? [L,R=301]
+
+RewriteRule ^rentals/properties/a\-house\-of\-3\-sistas/print/$ /rentals/a\-house\-of\-3\-sistas? [L,R=301]
+
+RewriteRule ^rentals/properties/a\-wave\-from\-it\-all\-1/$ /rentals/a\-wave\-from\-it\-all? [L,R=301]
+
+RewriteRule ^rentals/properties/a\-wave\-from\-it\-all\-1/gallery/$ /rentals/a\-wave\-from\-it\-all? [L,R=301]
+
+RewriteRule ^rentals/properties/a\-wave\-from\-it\-all\-1/print/$ /rentals/a\-wave\-from\-it\-all? [L,R=301]
+
+RewriteRule ^rentals/properties/a\-wave\-from\-it\-all/$ /rentals/a\-wave\-from\-it\-all? [L,R=301]
+
+RewriteRule ^rentals/properties/absent\-minded\-1/$ /rentals/absent\-minded? [L,R=301]
+
+RewriteRule ^rentals/properties/absent\-minded/$ /rentals/absent\-minded? [L,R=301]
+
+RewriteRule ^rentals/properties/absent\-minded/gallery/$ /rentals/absent\-minded? [L,R=301]
+
+RewriteRule ^rentals/properties/absent\-minded/print/$ /rentals/absent\-minded? [L,R=301]
+
+RewriteRule ^rentals/properties/after\-dune\-delight/$ /rentals/after\-dune\-delight? [L,R=301]
+
+RewriteRule ^rentals/properties/after\-dune\-delight/gallery/$ /rentals/after\-dune\-delight? [L,R=301]
+
+RewriteRule ^rentals/properties/after\-dune\-delight/print/$ /rentals/after\-dune\-delight? [L,R=301]
+
+RewriteRule ^rentals/properties/against\-the\-wind/$ /rentals/against\-the\-wind? [L,R=301]
+
+RewriteRule ^rentals/properties/against\-the\-wind/gallery/$ /rentals/against\-the\-wind? [L,R=301]
+
+RewriteRule ^rentals/properties/against\-the\-wind/print/$ /rentals/against\-the\-wind? [L,R=301]
+
+RewriteRule ^rentals/properties/ahead\-of\-the\-game/$ /rentals/ahead\-of\-the\-game? [L,R=301]
+
+RewriteRule ^rentals/properties/ahead\-of\-the\-game/gallery/$ /rentals/ahead\-of\-the\-game? [L,R=301]
+
+RewriteRule ^rentals/properties/ahead\-of\-the\-game/print/$ /rentals/ahead\-of\-the\-game? [L,R=301]
+
+RewriteRule ^rentals/properties/ahh\-sunny\-daze/$ /rentals/ahh\-sunny\-daze? [L,R=301]
+
+RewriteRule ^rentals/properties/ahh\-sunny\-daze/gallery/$ /rentals/ahh\-sunny\-daze? [L,R=301]
+
+RewriteRule ^rentals/properties/ahh\-sunny\-daze/print/$ /rentals/ahh\-sunny\-daze? [L,R=301]
+
+RewriteRule ^rentals/properties/always\-sunny/$ /rentals/always\-sunny? [L,R=301]
+
+RewriteRule ^rentals/properties/always\-sunny/gallery/$ /rentals/always\-sunny? [L,R=301]
+
+RewriteRule ^rentals/properties/always\-sunny/print/$ /rentals/always\-sunny? [L,R=301]
+
+RewriteRule ^rentals/properties/amazing\-view\-e\-14/$ /rentals/amazing\-view\-e14? [L,R=301]
+
+RewriteRule ^rentals/properties/amazing\-view\-e\-14/gallery/$ /rentals/amazing\-view\-e14? [L,R=301]
+
+RewriteRule ^rentals/properties/amazing\-view\-e\-14/print/$ /rentals/amazing\-view\-e14? [L,R=301]
+
+RewriteRule ^rentals/properties/angel\-sand/$ /rentals/angel\-sand? [L,R=301]
+
+RewriteRule ^rentals/properties/angel\-sand/gallery/$ /rentals/angel\-sand? [L,R=301]
+
+RewriteRule ^rentals/properties/angel\-sand/print/$ /rentals/angel\-sand? [L,R=301]
+
+RewriteRule ^rentals/properties/another\-day\-in\-paradise/$ /rentals/another\-day\-in\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/another\-day\-in\-paradise/gallery/$ /rentals/another\-day\-in\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/another\-day\-in\-paradise/print/$ /rentals/another\-day\-in\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/bar\-harbor\-east/$ /rentals/bar\-harbor\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/bar\-harbor\-east/gallery/$ /rentals/bar\-harbor\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/bar\-harbor\-east/print/$ /rentals/bar\-harbor\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/bar\-harbor\-west/$ /rentals/bar\-harbor\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/bar\-harbor\-west/gallery/$ /rentals/bar\-harbor\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/bar\-harbor\-west/print/$ /rentals/bar\-harbor\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/bay\-leave/$ /rentals/bay\-leave? [L,R=301]
+
+RewriteRule ^rentals/properties/bay\-leave/gallery/$ /rentals/bay\-leave? [L,R=301]
+
+RewriteRule ^rentals/properties/bay\-leave/print/$ /rentals/bay\-leave? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-break/$ /rentals/beach\-break? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-break/gallery/$ /rentals/beach\-break? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-break/print/$ /rentals/beach\-break? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-dreams\-1/$ /rentals/beach\-dream? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-dreams/$ /rentals/beach\-dream? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-dreams/gallery/$ /rentals/beach\-dream? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-dreams/print/$ /rentals/beach\-dream? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-escape\-1/$ /rentals/beach\-escape? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-escape\-1/gallery/$ /rentals/beach\-escape? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-escape\-1/print/$ /rentals/beach\-escape? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-escape/$ /rentals/beach\-escape? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-house/$ /rentals/beach\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-house/gallery/$ /rentals/beach\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-house/print/$ /rentals/beach\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-mouse\-house/$ /rentals/beach\-mouse\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-mouse\-house/gallery/$ /rentals/beach\-mouse\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-mouse\-house/print/$ /rentals/beach\-mouse\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/beach\-mouse\-ii/$ /rentals/beach\-mouse\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/beale\-street\-bungalow/$ /rentals/beale\-street\-bungalow? [L,R=301]
+
+RewriteRule ^rentals/properties/beale\-street\-bungalow/gallery/$ /rentals/beale\-street\-bungalow? [L,R=301]
+
+RewriteRule ^rentals/properties/beale\-street\-bungalow/print/$ /rentals/beale\-street\-bungalow? [L,R=301]
+
+RewriteRule ^rentals/properties/blue\-hideaway/$ /rentals/blue\-hideaway? [L,R=301]
+
+RewriteRule ^rentals/properties/blue\-hideaway/gallery/$ /rentals/blue\-hideaway? [L,R=301]
+
+RewriteRule ^rentals/properties/blue\-hideaway/print/$ /rentals/blue\-hideaway? [L,R=301]
+
+RewriteRule ^rentals/properties/bonita\-breeze/$ /rentals/bonita\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/bonita\-breeze/gallery/$ /rentals/bonita\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/bonita\-breeze/print/$ /rentals/bonita\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/born\-to\-sun/$ /rentals/born\-to\-sun? [L,R=301]
+
+RewriteRule ^rentals/properties/born\-to\-sun/gallery/$ /rentals/born\-to\-sun? [L,R=301]
+
+RewriteRule ^rentals/properties/born\-to\-sun/print/$ /rentals/born\-to\-sun? [L,R=301]
+
+RewriteRule ^rentals/properties/cabana/$ /rentals/cabana? [L,R=301]
+
+RewriteRule ^rentals/properties/cabana/gallery/$ /rentals/cabana? [L,R=301]
+
+RewriteRule ^rentals/properties/cabana/print/$ /rentals/cabana? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-del\-sol\-east/$ /rentals/casa\-del\-sol\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-del\-sol\-east/gallery/$ /rentals/casa\-del\-sol\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-del\-sol\-east/print/$ /rentals/casa\-del\-sol\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-del\-sol\-west/$ /rentals/casa\-del\-sol\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-del\-sol\-west/gallery/$ /rentals/casa\-del\-sol\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-del\-sol\-west/print/$ /rentals/casa\-del\-sol\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-verdi/$ /rentals/casa\-verdi? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-verdi/gallery/$ /rentals/casa\-verdi? [L,R=301]
+
+RewriteRule ^rentals/properties/casa\-verdi/print/$ /rentals/casa\-verdi? [L,R=301]
+
+RewriteRule ^rentals/properties/cat\-5\-unit\-s\-2/$ /rentals/cat\-5\-unit\-s2? [L,R=301]
+
+RewriteRule ^rentals/properties/cat\-5\-unit\-s\-2/gallery/$ /rentals/cat\-5\-unit\-s2? [L,R=301]
+
+RewriteRule ^rentals/properties/cat\-5\-unit\-s\-2/print/$ /rentals/cat\-5\-unit\-s2? [L,R=301]
+
+RewriteRule ^rentals/properties/chasing\-mermaids/$ /rentals/chasing\-mermaids? [L,R=301]
+
+RewriteRule ^rentals/properties/chasing\-mermaids/gallery/$ /rentals/chasing\-mermaids? [L,R=301]
+
+RewriteRule ^rentals/properties/chasing\-mermaids/print/$ /rentals/chasing\-mermaids? [L,R=301]
+
+RewriteRule ^rentals/properties/clurins\-blue\-heaven/$ /rentals/clurins\-blue\-heaven? [L,R=301]
+
+RewriteRule ^rentals/properties/clurins\-blue\-heaven/gallery/$ /rentals/clurins\-blue\-heaven? [L,R=301]
+
+RewriteRule ^rentals/properties/clurins\-blue\-heaven/print/$ /rentals/clurins\-blue\-heaven? [L,R=301]
+
+RewriteRule ^rentals/properties/coastal\-connection/$ /rentals/coastal\-connection? [L,R=301]
+
+RewriteRule ^rentals/properties/coastal\-connection/gallery/$ /rentals/coastal\-connection? [L,R=301]
+
+RewriteRule ^rentals/properties/coastal\-connection/print/$ /rentals/coastal\-connection? [L,R=301]
+
+RewriteRule ^rentals/properties/coles\-acting\-knowin/$ /rentals/coles\-acting\-knowin? [L,R=301]
+
+RewriteRule ^rentals/properties/coles\-acting\-knowin/gallery/$ /rentals/coles\-acting\-knowin? [L,R=301]
+
+RewriteRule ^rentals/properties/coles\-acting\-knowin/print/$ /rentals/coles\-acting\-knowin? [L,R=301]
+
+RewriteRule ^rentals/properties/coles\-sailors\-seavue\-inn/$ /rentals/coles\-sailors\-seavue\-inn? [L,R=301]
+
+RewriteRule ^rentals/properties/coles\-sailors\-seavue\-inn/gallery/$ /rentals/coles\-sailors\-seavue\-inn? [L,R=301]
+
+RewriteRule ^rentals/properties/coles\-sailors\-seavue\-inn/print/$ /rentals/coles\-sailors\-seavue\-inn? [L,R=301]
+
+RewriteRule ^rentals/properties/crystal\-paradise/$ /rentals/crystal\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/crystal\-paradise/gallery/$ /rentals/crystal\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/crystal\-paradise/print/$ /rentals/crystal\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/cuz\-sands\-east/$ /rentals/cuz\-sands\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/cuz\-sands\-east/gallery/$ /rentals/cuz\-sands\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/cuz\-sands\-east/print/$ /rentals/cuz\-sands\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/cuz\-sands\-west/$ /rentals/cuz\-sands\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/cuz\-sands\-west/gallery/$ /rentals/cuz\-sands\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/cuz\-sands\-west/print/$ /rentals/cuz\-sands\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/days\-dream/$ /rentals/days\-dream? [L,R=301]
+
+RewriteRule ^rentals/properties/days\-dream/gallery/$ /rentals/days\-dream? [L,R=301]
+
+RewriteRule ^rentals/properties/days\-dream/print/$ /rentals/days\-dream? [L,R=301]
+
+RewriteRule ^rentals/properties/devereux\-house/$ /rentals/devereux\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/devereux\-house/gallery/$ /rentals/devereux\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/devereux\-house/print/$ /rentals/devereux\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/dixie\-dunes/$ /rentals/dixie\-dunes? [L,R=301]
+
+RewriteRule ^rentals/properties/dixie\-dunes/gallery/$ /rentals/dixie\-dunes? [L,R=301]
+
+RewriteRule ^rentals/properties/dixie\-dunes/print/$ /rentals/dixie\-dunes? [L,R=301]
+
+RewriteRule ^rentals/properties/dixieland\-delight/$ /rentals/dixieland\-delight? [L,R=301]
+
+RewriteRule ^rentals/properties/dixieland\-delight/gallery/$ /rentals/dixieland\-delight? [L,R=301]
+
+RewriteRule ^rentals/properties/dixieland\-delight/print/$ /rentals/dixieland\-delight? [L,R=301]
+
+RewriteRule ^rentals/properties/dolphin\-watch\-1/$ /rentals/dolphin\-watch? [L,R=301]
+
+RewriteRule ^rentals/properties/dolphin\-watch\-1/gallery/$ /rentals/dolphin\-watch? [L,R=301]
+
+RewriteRule ^rentals/properties/dolphin\-watch\-1/print/$ /rentals/dolphin\-watch? [L,R=301]
+
+RewriteRule ^rentals/properties/double\-wave/$ /rentals/double\-wave? [L,R=301]
+
+RewriteRule ^rentals/properties/double\-wave/gallery/$ /rentals/double\-wave? [L,R=301]
+
+RewriteRule ^rentals/properties/double\-wave/print/$ /rentals/double\-wave? [L,R=301]
+
+RewriteRule ^rentals/properties/down\-by\-the\-sea\-e\-4\-1/$ /rentals/down\-by\-the\-sea\-e4? [L,R=301]
+
+RewriteRule ^rentals/properties/down\-by\-the\-sea\-e\-4\-1/gallery/$ /rentals/down\-by\-the\-sea\-e4? [L,R=301]
+
+RewriteRule ^rentals/properties/down\-by\-the\-sea\-e\-4\-1/print/$ /rentals/down\-by\-the\-sea\-e4? [L,R=301]
+
+RewriteRule ^rentals/properties/down\-time/$ /rentals/down\-time? [L,R=301]
+
+RewriteRule ^rentals/properties/down\-time/gallery/$ /rentals/down\-time? [L,R=301]
+
+RewriteRule ^rentals/properties/down\-time/print/$ /rentals/down\-time? [L,R=301]
+
+RewriteRule ^rentals/properties/dream\-answered/$ /rentals/dream\-answered? [L,R=301]
+
+RewriteRule ^rentals/properties/dream\-answered/gallery/$ /rentals/dream\-answered? [L,R=301]
+
+RewriteRule ^rentals/properties/dream\-answered/print/$ /rentals/dream\-answered? [L,R=301]
+
+RewriteRule ^rentals/properties/due\-south/$ /rentals/due\-south? [L,R=301]
+
+RewriteRule ^rentals/properties/due\-south/gallery/$ /rentals/due\-south? [L,R=301]
+
+RewriteRule ^rentals/properties/due\-south/print/$ /rentals/due\-south? [L,R=301]
+
+RewriteRule ^rentals/properties/e\-15/$ /rentals/e\-15? [L,R=301]
+
+RewriteRule ^rentals/properties/e\-15/gallery/$ /rentals/e\-15? [L,R=301]
+
+RewriteRule ^rentals/properties/e\-15/print/$ /rentals/e\-15? [L,R=301]
+
+RewriteRule ^rentals/properties/engulfed/$ /rentals/engulfed? [L,R=301]
+
+RewriteRule ^rentals/properties/engulfed/gallery/$ /rentals/engulfed? [L,R=301]
+
+RewriteRule ^rentals/properties/engulfed/print/$ /rentals/engulfed? [L,R=301]
+
+RewriteRule ^rentals/properties/escape/$ /rentals/escape? [L,R=301]
+
+RewriteRule ^rentals/properties/escape/gallery/$ /rentals/escape? [L,R=301]
+
+RewriteRule ^rentals/properties/escape/print/$ /rentals/escape? [L,R=301]
+
+RewriteRule ^rentals/properties/fish\-stix/$ /rentals/fish\-stix? [L,R=301]
+
+RewriteRule ^rentals/properties/fish\-stix/gallery/$ /rentals/fish\-stix? [L,R=301]
+
+RewriteRule ^rentals/properties/fish\-stix/print/$ /rentals/fish\-stix? [L,R=301]
+
+RewriteRule ^rentals/properties/five\-oclock/$ /rentals/five\-oclock? [L,R=301]
+
+RewriteRule ^rentals/properties/five\-oclock/gallery/$ /rentals/five\-oclock? [L,R=301]
+
+RewriteRule ^rentals/properties/five\-oclock/print/$ /rentals/five\-oclock? [L,R=301]
+
+RewriteRule ^rentals/properties/footprints\-gulf\-front/$ /rentals/foots\-gulf\-front? [L,R=301]
+
+RewriteRule ^rentals/properties/footprints\-gulf\-front/gallery/$ /rentals/foots\-gulf\-front? [L,R=301]
+
+RewriteRule ^rentals/properties/footprints\-gulf\-front/print/$ /rentals/foots\-gulf\-front? [L,R=301]
+
+RewriteRule ^rentals/properties/goin\-coastal/$ /rentals/goin\-coastal? [L,R=301]
+
+RewriteRule ^rentals/properties/goin\-coastal/gallery/$ /rentals/goin\-coastal? [L,R=301]
+
+RewriteRule ^rentals/properties/goin\-coastal/print/$ /rentals/goin\-coastal? [L,R=301]
+
+RewriteRule ^rentals/properties/gone\-with\-the\-wind/$ /rentals/gone\-with\-the\-wind? [L,R=301]
+
+RewriteRule ^rentals/properties/gone\-with\-the\-wind/gallery/$ /rentals/gone\-with\-the\-wind? [L,R=301]
+
+RewriteRule ^rentals/properties/gone\-with\-the\-wind/print/$ /rentals/gone\-with\-the\-wind? [L,R=301]
+
+
+RewriteRule ^rentals/properties/gs\-plantation\-3216/$ /rentals/gs\-plantation\-3216? [L,R=301]
+
+RewriteRule ^rentals/properties/gs\-plantation\-3216/gallery/$ /rentals/gs\-plantation\-3216? [L,R=301]
+
+RewriteRule ^rentals/properties/gs\-plantation\-3216/print/$ /rentals/gs\-plantation\-3216? [L,R=301]
+
+RewriteRule ^rentals/properties/gulf\-breeze/$ /rentals/gulf\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/gulf\-breeze/gallery/$ /rentals/gulf\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/gulf\-breeze/print/$ /rentals/gulf\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/gumbo\-one\-1/$ /rentals/gumbo\-one? [L,R=301]
+
+RewriteRule ^rentals/properties/gumbo\-one\-1/gallery/$ /rentals/gumbo\-one? [L,R=301]
+
+RewriteRule ^rentals/properties/gumbo\-one\-1/print/$ /rentals/gumbo\-one? [L,R=301]
+
+RewriteRule ^rentals/properties/gumbo\-one/$ /rentals/gumbo\-one? [L,R=301]
+
+RewriteRule ^rentals/properties/happiness\-is/$ /rentals/happiness\-is? [L,R=301]
+
+RewriteRule ^rentals/properties/happiness\-is/gallery/$ /rentals/happiness\-is? [L,R=301]
+
+RewriteRule ^rentals/properties/happiness\-is/print/$ /rentals/happiness\-is? [L,R=301]
+
+RewriteRule ^rentals/properties/happy\-days/$ /rentals/happy\-days? [L,R=301]
+
+RewriteRule ^rentals/properties/happy\-days/gallery/$ /rentals/happy\-days? [L,R=301]
+
+RewriteRule ^rentals/properties/happy\-days/print/$ /rentals/happy\-days? [L,R=301]
+
+RewriteRule ^rentals/properties/happy\-hours/$ /rentals/happy\-hours? [L,R=301]
+
+RewriteRule ^rentals/properties/happy\-hours/gallery/$ /rentals/happy\-hours? [L,R=301]
+
+RewriteRule ^rentals/properties/happy\-hours/print/$ /rentals/happy\-hours? [L,R=301]
+
+RewriteRule ^rentals/properties/here\-at\-last/$ /rentals/here\-at\-last? [L,R=301]
+
+RewriteRule ^rentals/properties/here\-at\-last/gallery/$ /rentals/here\-at\-last? [L,R=301]
+
+RewriteRule ^rentals/properties/here\-at\-last/print/$ /rentals/here\-at\-last? [L,R=301]
+
+RewriteRule ^rentals/properties/honey\-dunes/$ /rentals/honey\-dunes? [L,R=301]
+
+RewriteRule ^rentals/properties/honey\-dunes/gallery/$ /rentals/honey\-dunes? [L,R=301]
+
+RewriteRule ^rentals/properties/honey\-dunes/print/$ /rentals/honey\-dunes? [L,R=301]
+
+RewriteRule ^rentals/properties/island\-dream\-east/$ /rentals/island\-dream\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/island\-dream\-east/gallery/$ /rentals/island\-dream\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/island\-dream\-east/print/$ /rentals/island\-dream\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/island\-dream\-west/$ /rentals/island\-dream\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/island\-dream\-west/gallery/$ /rentals/island\-dream\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/island\-dream\-west/print/$ /rentals/island\-dream\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/Jolievie/$ /rentals/jolievie? [L,R=301]
+
+RewriteRule ^rentals/properties/jolievie/gallery/$ /rentals/jolievie? [L,R=301]
+
+RewriteRule ^rentals/properties/jolievie/print/$ /rentals/jolievie? [L,R=301]
+
+RewriteRule ^rentals/properties/june\-breeze/$ /rentals/june\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/june\-breeze/gallery/$ /rentals/june\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/june\-breeze/print/$ /rentals/june\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/kessler\-house/$ /rentals/kessler\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/kessler\-house/gallery/$ /rentals/kessler\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/kessler\-house/print/$ /rentals/kessler\-house? [L,R=301]
+
+RewriteRule ^rentals/properties/kokomo/$ /rentals/kokomo? [L,R=301]
+
+RewriteRule ^rentals/properties/kokomo/gallery/$ /rentals/kokomo? [L,R=301]
+
+RewriteRule ^rentals/properties/kokomo/print/$ /rentals/kokomo? [L,R=301]
+
+RewriteRule ^rentals/properties/labella\-casa/$ /rentals/labella\-casa? [L,R=301]
+
+RewriteRule ^rentals/properties/labella\-casa/gallery/$ /rentals/labella\-casa? [L,R=301]
+
+RewriteRule ^rentals/properties/labella\-casa/print/$ /rentals/labella\-casa? [L,R=301]
+
+RewriteRule ^rentals/properties/latitude\-adjustment/$ /rentals/latitude\-adjustment? [L,R=301]
+
+RewriteRule ^rentals/properties/latitude\-adjustment/gallery/$ /rentals/latitude\-adjustment? [L,R=301]
+
+RewriteRule ^rentals/properties/latitude\-adjustment/print/$ /rentals/latitude\-adjustment? [L,R=301]
+
+RewriteRule ^rentals/properties/let\-the\-good\-tides\-roll\-1/$ /rentals/let\-the\-good\-tides\-roll? [L,R=301]
+
+RewriteRule ^rentals/properties/let\-the\-good\-tides\-roll\-1/gallery/$ /rentals/let\-the\-good\-tides\-roll? [L,R=301]
+
+RewriteRule ^rentals/properties/let\-the\-good\-tides\-roll\-1/print/$ /rentals/let\-the\-good\-tides\-roll? [L,R=301]
+
+RewriteRule ^rentals/properties/let\-the\-good\-tides\-roll/$ /rentals/let\-the\-good\-tides\-roll? [L,R=301]
+
+RewriteRule ^rentals/properties/lotsa\-sands/$ /rentals/lotsa\-sands\-d? [L,R=301]
+
+RewriteRule ^rentals/properties/lotsa\-sands/gallery/$ /rentals/lotsa\-sands\-d? [L,R=301]
+
+RewriteRule ^rentals/properties/lotsa\-sands/print/$ /rentals/lotsa\-sands\-d? [L,R=301]
+
+RewriteRule ^rentals/properties/mackerel/$ /rentals/mackeral? [L,R=301]
+
+RewriteRule ^rentals/properties/mackerel/gallery/$ /rentals/mackeral? [L,R=301]
+
+RewriteRule ^rentals/properties/mackerel/print/$ /rentals/mackeral? [L,R=301]
+
+RewriteRule ^rentals/properties/mighty\-fine/$ /rentals/mighty\-fine? [L,R=301]
+
+RewriteRule ^rentals/properties/mighty\-fine/gallery/$ /rentals/mighty\-fine? [L,R=301]
+
+RewriteRule ^rentals/properties/mighty\-fine/print/$ /rentals/mighty\-fine? [L,R=301]
+
+RewriteRule ^rentals/properties/mitts\-issippi/$ /rentals/mittsissippi? [L,R=301]
+
+RewriteRule ^rentals/properties/mitts\-issippi/gallery/$ /rentals/mittsissippi? [L,R=301]
+
+RewriteRule ^rentals/properties/mitts\-issippi/print/$ /rentals/mittsissippi? [L,R=301]
+
+RewriteRule ^rentals/properties/oh\-me\-by\-the\-sea\-1/$ /rentals/oh\-me\-by\-the\-sea? [L,R=301]
+
+RewriteRule ^rentals/properties/oh\-me\-by\-the\-sea/$ /rentals/oh\-me\-by\-the\-sea? [L,R=301]
+
+RewriteRule ^rentals/properties/oh\-me\-by\-the\-sea/gallery/$ /rentals/oh\-me\-by\-the\-sea? [L,R=301]
+
+RewriteRule ^rentals/properties/oh\-me\-by\-the\-sea/print/$ /rentals/oh\-me\-by\-the\-sea? [L,R=301]
+
+RewriteRule ^rentals/properties/one\-particular\-harbor\-1/$ /rentals/one\-particular\-harbor? [L,R=301]
+
+RewriteRule ^rentals/properties/one\-particular\-harbor\-1/gallery/$ /rentals/one\-particular\-harbor? [L,R=301]
+
+RewriteRule ^rentals/properties/one\-particular\-harbor\-1/print/$ /rentals/one\-particular\-harbor? [L,R=301]
+
+RewriteRule ^rentals/properties/plumb\-paradise/$ /rentals/plumb\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/plumb\-paradise/gallery/$ /rentals/plumb\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/plumb\-paradise/print/$ /rentals/plumb\-paradise? [L,R=301]
+
+RewriteRule ^rentals/properties/poppys\-place/$ /rentals/poppys\-place? [L,R=301]
+
+RewriteRule ^rentals/properties/poppys\-place/gallery/$ /rentals/poppys\-place? [L,R=301]
+
+RewriteRule ^rentals/properties/poppys\-place/print/$ /rentals/poppys\-place? [L,R=301]
+
+RewriteRule ^rentals/properties/r\-x26\-r/$ /rentals/r\-and\-r? [L,R=301]
+
+RewriteRule ^rentals/properties/r\-x26\-r/gallery/$ /rentals/r\-and\-r? [L,R=301]
+
+RewriteRule ^rentals/properties/r\-x26\-r/print/$ /rentals/r\-and\-r? [L,R=301]
+
+RewriteRule ^rentals/properties/rainbows\-retreat/$ /rentals/serenity\-shores? [L,R=301]
+
+RewriteRule ^rentals/properties/rainbows\-retreat/gallery/$ /rentals/serenity\-shores? [L,R=301]
+
+RewriteRule ^rentals/properties/rainbows\-retreat/print/$ /rentals/serenity\-shores? [L,R=301]
+
+RewriteRule ^rentals/properties/rees\-roost/$ /rentals/zephyr\-shores? [L,R=301]
+
+RewriteRule ^rentals/properties/rees\-roost/gallery/$ /rentals/zephyr\-shores? [L,R=301]
+
+RewriteRule ^rentals/properties/rees\-roost/print/$ /rentals/zephyr\-shores? [L,R=301]
+
+RewriteRule ^rentals/properties/salt\-therapy/$ /rentals/salt\-therapy? [L,R=301]
+
+RewriteRule ^rentals/properties/salt\-therapy/gallery/$ /rentals/salt\-therapy? [L,R=301]
+
+RewriteRule ^rentals/properties/salt\-therapy/print/$ /rentals/salt\-therapy? [L,R=301]
+
+RewriteRule ^rentals/properties/salty\-heir/$ /rentals/salty\-heir? [L,R=301]
+
+RewriteRule ^rentals/properties/salty\-heir/gallery/$ /rentals/salty\-heir? [L,R=301]
+
+RewriteRule ^rentals/properties/salty\-heir/print/$ /rentals/salty\-heir? [L,R=301]
+
+RewriteRule ^rentals/properties/salty\-paws/$ /rentals/salty\-paws? [L,R=301]
+
+RewriteRule ^rentals/properties/salty\-paws/gallery/$ /rentals/salty\-paws? [L,R=301]
+
+RewriteRule ^rentals/properties/salty\-paws/print/$ /rentals/salty\-paws? [L,R=301]
+
+RewriteRule ^rentals/properties/sand\-box/$ /rentals/sand\-box? [L,R=301]
+
+RewriteRule ^rentals/properties/sand\-box/gallery/$ /rentals/sand\-box? [L,R=301]
+
+RewriteRule ^rentals/properties/sand\-box/print/$ /rentals/sand\-box? [L,R=301]
+
+RewriteRule ^rentals/properties/sand\-by\-me/$ /rentals/sand\-by\-me? [L,R=301]
+
+RewriteRule ^rentals/properties/sand\-by\-me/gallery/$ /rentals/sand\-by\-me? [L,R=301]
+
+RewriteRule ^rentals/properties/sand\-by\-me/print/$ /rentals/sand\-by\-me? [L,R=301]
+
+RewriteRule ^rentals/properties/sandbar\-s3/$ /rentals/sandbar\-s3? [L,R=301]
+
+RewriteRule ^rentals/properties/sandbar\-s3/gallery/$ /rentals/sandbar\-s3? [L,R=301]
+
+RewriteRule ^rentals/properties/sandbar\-s3/print/$ /rentals/sandbar\-s3? [L,R=301]
+
+RewriteRule ^rentals/properties/sandsong/$ /rentals/sandsong? [L,R=301]
+
+RewriteRule ^rentals/properties/sandsong/gallery/$ /rentals/sandsong? [L,R=301]
+
+RewriteRule ^rentals/properties/sandsong/print/$ /rentals/sandsong? [L,R=301]
+
+RewriteRule ^rentals/properties/sandys\-dune/$ /rentals/sandys\-dune? [L,R=301]
+
+RewriteRule ^rentals/properties/sandys\-dune/gallery/$ /rentals/sandys\-dune? [L,R=301]
+
+RewriteRule ^rentals/properties/sandys\-dune/print/$ /rentals/sandys\-dune? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-breeze/$ /rentals/sea\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-breeze/gallery/$ /rentals/sea\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-breeze/print/$ /rentals/sea\-breeze? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-crystal\-cottage/$ /rentals/sea\-crystal\-cottage? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-crystal\-cottage/gallery/$ /rentals/sea\-crystal\-cottage? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-crystal\-cottage/print/$ /rentals/sea\-crystal\-cottage? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-spray/$ /rentals/sea\-spray? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-spray/gallery/$ /rentals/sea\-spray? [L,R=301]
+
+RewriteRule ^rentals/properties/sea\-spray/print/$ /rentals/sea\-spray? [L,R=301]
+
+RewriteRule ^rentals/properties/seagull\-east/$ /rentals/seagull\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/seahorse/$ /rentals/absolutely\-crabulous? [L,R=301]
+
+RewriteRule ^rentals/properties/seahorse/gallery/$ /rentals/absolutely\-crabulous? [L,R=301]
+
+RewriteRule ^rentals/properties/seahorse/print/$ /rentals/absolutely\-crabulous? [L,R=301]
+
+RewriteRule ^rentals/properties/seaquel\-1/$ /rentals/seaquel? [L,R=301]
+
+RewriteRule ^rentals/properties/seaquel\-1/gallery/$ /rentals/seaquel? [L,R=301]
+
+RewriteRule ^rentals/properties/seaquel\-1/print/$ /rentals/seaquel? [L,R=301]
+
+RewriteRule ^rentals/properties/seaquel/$ /rentals/seaquel? [L,R=301]
+
+RewriteRule ^rentals/properties/seas\-the\-moment/$ /rentals/seas\-the\-moment? [L,R=301]
+
+RewriteRule ^rentals/properties/seas\-the\-moment/gallery/$ /rentals/seas\-the\-moment? [L,R=301]
+
+RewriteRule ^rentals/properties/seas\-the\-moment/print/$ /rentals/seas\-the\-moment? [L,R=301]
+
+RewriteRule ^rentals/properties/shore\-is\-nice\-ii/$ /rentals/shore\-is\-nice\-ii? [L,R=301]
+
+RewriteRule ^rentals/properties/shore\-is\-nice\-ii/gallery/$ /rentals/shore\-is\-nice\-ii? [L,R=301]
+
+RewriteRule ^rentals/properties/shore\-is\-nice\-ii/print/$ /rentals/shore\-is\-nice\-ii? [L,R=301]
+
+RewriteRule ^rentals/properties/sit\-x26\-swann/$ /rentals/sit\-and\-swann? [L,R=301]
+
+RewriteRule ^rentals/properties/sit\-x26\-swann/gallery/$ /rentals/sit\-and\-swann? [L,R=301]
+
+RewriteRule ^rentals/properties/sit\-x26\-swann/print/$ /rentals/sit\-and\-swann? [L,R=301]
+
+RewriteRule ^rentals/properties/smithstonean/$ /rentals/smithstonian? [L,R=301]
+
+RewriteRule ^rentals/properties/smithstonean/gallery/$ /rentals/smithstonian? [L,R=301]
+
+RewriteRule ^rentals/properties/st\-christophers\-bay/$ /rentals/st\-christophers\-bay? [L,R=301]
+
+RewriteRule ^rentals/properties/st\-christophers\-bay/gallery/$ /rentals/st\-christophers\-bay? [L,R=301]
+
+RewriteRule ^rentals/properties/st\-christophers\-bay/print/$ /rentals/st\-christophers\-bay? [L,R=301]
+
+RewriteRule ^rentals/properties/stay\-salty/$ /rentals/stay\-salty? [L,R=301]
+
+RewriteRule ^rentals/properties/stay\-salty/gallery/$ /rentals/stay\-salty? [L,R=301]
+
+RewriteRule ^rentals/properties/stay\-salty/print/$ /rentals/stay\-salty? [L,R=301]
+
+RewriteRule ^rentals/properties/sugar\-shack\-e12/$ /rentals/sugar\-shack\-e12? [L,R=301]
+
+RewriteRule ^rentals/properties/sugar\-shack\-e12/gallery/$ /rentals/sugar\-shack\-e12? [L,R=301]
+
+RewriteRule ^rentals/properties/sugar\-shack\-e12/print/$ /rentals/sugar\-shack\-e12? [L,R=301]
+
+RewriteRule ^rentals/properties/summerscape\-1/$ /rentals/summerscape? [L,R=301]
+
+RewriteRule ^rentals/properties/summerscape\-1/gallery/$ /rentals/summerscape? [L,R=301]
+
+RewriteRule ^rentals/properties/summerscape\-1/print/$ /rentals/summerscape? [L,R=301]
+
+RewriteRule ^rentals/properties/summerscape/$ /rentals/summerscape? [L,R=301]
+
+RewriteRule ^rentals/properties/sumr\-all\-time/$ /rentals/sumr\-all\-time? [L,R=301]
+
+RewriteRule ^rentals/properties/sumr\-all\-time/gallery/$ /rentals/sumr\-all\-time? [L,R=301]
+
+RewriteRule ^rentals/properties/sumr\-all\-time/print/$ /rentals/sumr\-all\-time? [L,R=301]
+
+RewriteRule ^rentals/properties/sun\-of\-a\-beach/$ /rentals/sun\-of\-a\-beach? [L,R=301]
+
+RewriteRule ^rentals/properties/sun\-of\-a\-beach/gallery/$ /rentals/sun\-of\-a\-beach? [L,R=301]
+
+RewriteRule ^rentals/properties/sun\-of\-a\-beach/print/$ /rentals/sun\-of\-a\-beach? [L,R=301]
+
+RewriteRule ^rentals/properties/surfin\-safari/$ /rentals/surfin\-safari? [L,R=301]
+
+RewriteRule ^rentals/properties/surfin\-safari/gallery/$ /rentals/surfin\-safari? [L,R=301]
+
+RewriteRule ^rentals/properties/surfin\-safari/print/$ /rentals/surfin\-safari? [L,R=301]
+
+RewriteRule ^rentals/properties/surfs\-up/$ /rentals/surfs\-up? [L,R=301]
+
+RewriteRule ^rentals/properties/surfs\-up/gallery/$ /rentals/surfs\-up? [L,R=301]
+
+RewriteRule ^rentals/properties/surfs\-up/print/$ /rentals/surfs\-up? [L,R=301]
+
+RewriteRule ^rentals/properties/tamaron/$ /rentals/tamaron? [L,R=301]
+
+RewriteRule ^rentals/properties/tamaron/gallery/$ /rentals/tamaron? [L,R=301]
+
+RewriteRule ^rentals/properties/tamaron/print/$ /rentals/tamaron? [L,R=301]
+
+RewriteRule ^rentals/properties/the\-gulf\-shack/$ /rentals/the\-gulf\-shack? [L,R=301]
+
+RewriteRule ^rentals/properties/the\-gulf\-shack/gallery/$ /rentals/the\-gulf\-shack? [L,R=301]
+
+RewriteRule ^rentals/properties/the\-gulf\-shack/print/$ /rentals/the\-gulf\-shack? [L,R=301]
+
+RewriteRule ^rentals/properties/the\-s\-h\-e\-d/$ /rentals/the\-shed\-sunkissed\-happy\-easy\-days? [L,R=301]
+
+RewriteRule ^rentals/properties/the\-s\-h\-e\-d/gallery/$ /rentals/the\-shed\-sunkissed\-happy\-easy\-days? [L,R=301]
+
+RewriteRule ^rentals/properties/the\-s\-h\-e\-d/print/$ /rentals/the\-shed\-sunkissed\-happy\-easy\-days? [L,R=301]
+
+RewriteRule ^rentals/properties/times\-pic\-a\-dune/$ /rentals/times\-pic\-a\-dune? [L,R=301]
+
+RewriteRule ^rentals/properties/times\-pic\-a\-dune/gallery/$ /rentals/times\-pic\-a\-dune? [L,R=301]
+
+RewriteRule ^rentals/properties/times\-pic\-a\-dune/print/$ /rentals/times\-pic\-a\-dune? [L,R=301]
+
+RewriteRule ^rentals/properties/tranquility\-east\-1/$ /rentals/tranquility\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/tranquility\-east\-1/gallery/$ /rentals/tranquility\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/tranquility\-east\-1/print/$ /rentals/tranquility\-east? [L,R=301]
+
+RewriteRule ^rentals/properties/tranquility\-west/$ /rentals/tranquility\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/tranquility\-west/gallery/$ /rentals/tranquility\-west? [L,R=301]
+
+RewriteRule ^rentals/properties/tranquility\-west/print/$ /rentals/tranquility\-west? [L,R=301]
+
+
+# /////////////////////////////
+# PROGRAMMING TEAM: This rule is for SEO friendly detail pages with dates; the format is /booking/property-name/unitcode?strcheckin=date&strcheckout=date
+# UNCOMMENT THE ONE YOU NEED!
+# /////////////////////////////
+# --------------------------------------------------------------------
+
+#This rule is for the custom search pages
+
+RewriteRule ^search/([a-zA-Z0-9-]+)$ layouts/full-booking.cfm?slug=search/$1 [L]
+
+#This rule is for the custom map page
+RewriteRule ^property-map/$ layouts/map-booking.cfm [QSA,L]
+
+# --------------------------------------------------------------------
+
+# A.DOUTE 2020-05-04 Moved these lines from approx line 22 to here, not sure why it fixed the PDP issue, but it did
+# this needs to come before the location check, below - /mls/results gets caught by the ^([a-zA-Z0-9-]+)/results$ line
+RewriteRule ^mls/results$ mls/results.cfm [QSA,L]
+#Rewrite rule for MLS PDP's - DO NOT REMOVE
+RewriteRule ^mls/([a-zA-Z-0-9_-]+)-([0-9]+)-([0-9]+)/([0-9a-zA-Z-]+)$ mls/property.cfm?mlsnumber=$1&wsid=$2&mlsid=$3&address=$4 [L]
+
+#Rewrite rule for the SEO friendly results page
+RewriteRule ^rentals/results$ rentals/results.cfm [L]
+
+#This rule is for SEO friendly detail pages; the format is /booking/property-name/unitcode
+RewriteRule ^rentals/([a-zA-Z0-9-]+)$ rentals/property.cfm?slug=$1 [L]
+
+#Rewrite rule for specials detail pages
+RewriteRule ^special/([a-zA-Z0-9-]+)$ rentals/special-layout.cfm?$1 [L]
+
+
+# --------------------------------------------------------------------
+
+# /////////////////////////////
+# WORDPRESS REWRITES
+# /////////////////////////////
+
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+
+# --------------------------------------------------------------------
+# SQL Injection Protection
+# http://www.aliaspooryorik.com/blog/index.cfm/e/posts.details/post/blocking-sql-injection-with-htaccess-383
+# --------------------------------------------------------------------
+
+
+RewriteRule ^.*EXEC\(@.*$        - [R=404,L,NC]
+RewriteRule ^.*CAST\(.*$         - [R=404,L,NC]
+RewriteRule ^.*DECLARE.*$        - [R=404,L,NC]
+RewriteRule ^.*DECLARE%20.*$     - [R=404,L,NC]
+RewriteRule ^.*NVARCHAR.*$       - [R=404,L,NC]
+RewriteRule ^.*sp_password.*$    - [R=404,L,NC]
+RewriteRule ^.*%20xp_.*$         - [R=404,L,NC]
+
+
+
+
+
+# /////////////////////////////
+# CACHING PARAMETERS FOR FILE TYPES
+# /////////////////////////////
+# SET CACHE FOR 1 YEAR FOR IMAGES
+<filesMatch ".(jpg|jpeg|png|gif|ico)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+# SET CACHE FOR 1 MONTH FOR js AND css
+<filesMatch ".(css|js)$">
+Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
+
+

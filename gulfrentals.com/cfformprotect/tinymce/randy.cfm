@@ -1,0 +1,1 @@
+<cfoutput>#now()# - #createuuid()#</cfoutput>

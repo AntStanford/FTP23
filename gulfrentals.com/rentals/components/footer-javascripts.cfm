@@ -372,6 +372,9 @@
 						myBadCheckoutDates[counter] = '#DateFormat(NextDate,"yyyy-mm-dd")#';
           <cfelseif ListFind(nonAvailListForDatepicker,NextDate) AND NOT ListFind(nonAvailListForDatepicker,PreviousDate) AND DateCompare(i,Now()) GT 0> <!--- Checkin day --->
 						myBadCheckinDates[counter] = '#DateFormat(PreviousDate,"yyyy-mm-dd")#';
+					<cfelseif NOT ListFind(nonAvailListForDatepicker,NextDate) AND NOT ListFind(nonAvailListForDatepicker,PreviousDate) AND DateCompare(i,Now()) GT 0> <!--- TT:121759 Handle checkin / checkout if customer booked a stay like: 6/12 - 6/13 --->
+						myBadCheckinDates[counter] = '#DateFormat(PreviousDate,"yyyy-mm-dd")#';
+						myBadCheckoutDates[counter] = '#DateFormat(i,"yyyy-mm-dd")#';
           </cfif>
 					myBadDates[counter] = '#DateFormat(i,"yyyy-mm-dd")#';
     		</cfoutput>
